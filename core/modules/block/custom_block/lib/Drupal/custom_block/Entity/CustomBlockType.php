@@ -106,4 +106,19 @@ class CustomBlockType extends ConfigEntityBase implements CustomBlockTypeInterfa
     }
   }
 
+  /**
+   * {@inheritdoc}
+   */
+  public function getDescription() {
+    return $this->description;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function setDescription($description) {
+    $this->description = $description;
+    return $this;
+  }
+
 }

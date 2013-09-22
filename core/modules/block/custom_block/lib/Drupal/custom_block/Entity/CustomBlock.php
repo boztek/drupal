@@ -253,6 +253,43 @@ class CustomBlock extends EntityNG implements CustomBlockInterface {
   /**
    * {@inheritdoc}
    */
+  public function getCustomBlockType() {
+    return $this->type;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function getDescription() {
+    return $this->info;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function setDescription($description) {
+    $this->info = $description;
+    return $this;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function getLogMessage() {
+    return $this->log;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function setLogMessage($log) {
+    $this->log = $log;
+    return $this;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
   public static function baseFieldDefinitions($entity_type) {
     $properties['id'] = array(
       'label' => t('ID'),

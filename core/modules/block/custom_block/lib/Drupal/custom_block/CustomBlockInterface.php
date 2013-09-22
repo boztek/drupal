@@ -47,4 +47,49 @@ interface CustomBlockInterface extends ContentEntityInterface, EntityChangedInte
    */
   public function getInstances();
 
+  /**
+   * Return the custom block type (bundle) name.
+   *
+   * @return string
+   *   The name of the custom block type (bundle).
+   */
+  public function getCustomBlockType();
+
+  /**
+   * Returns the block description.
+   *
+   * @return string
+   *   The description of this block.
+   */
+  public function getDescription();
+
+  /**
+   * Sets the description of the block to the given value.
+   *
+   * @param string $description
+   *   The desired description.
+   *
+   * @return \Drupal\custom_block\CustomBlockInterface
+   *   The class instance this method is called on.
+   */
+  public function setDescription($description);
+
+  /**
+   * Returns the block revision log message.
+   *
+   * @return string
+   *   The log message for the current revision of this block.
+   */
+  public function getLogMessage();
+
+  /**
+   * Sets the the block revision log message to the given value.
+   *
+   * @param string
+   *   The desired log message for the current revision of this block.
+   *
+   * @return \Drupal\custom_block\CustomBlockInterface
+   *   The class instance this method is called on.
+   */
+  public function setLogMessage($log);
 }
