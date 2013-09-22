@@ -7,11 +7,11 @@
 
 namespace Drupal\block\Entity;
 
+use Drupal\block\BlockInterface;
+use Drupal\block\BlockPluginBag;
+use Drupal\Core\Annotation\Translation;
 use Drupal\Core\Config\Entity\ConfigEntityBase;
 use Drupal\Core\Entity\Annotation\EntityType;
-use Drupal\Core\Annotation\Translation;
-use Drupal\block\BlockPluginBag;
-use Drupal\block\BlockInterface;
 use Drupal\Core\Entity\EntityStorageControllerInterface;
 
 /**
@@ -162,6 +162,58 @@ class Block extends ConfigEntityBase implements BlockInterface {
     parent::preSave($storage_controller);
 
     $this->set('settings', $this->getPlugin()->getConfiguration());
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function settings() {
+    return $this->get('settings');
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function getRegion() {
+    return $this->get('region');
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function setRegion($region) {
+    $this->set('region', $region);
+    return $this;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function getWeight() {
+    return $this->get('weight');
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function setWeight($weight) {
+    $this->set('weight', $weight);
+    return $this;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function getVisibility() {
+    return $this->get('visibility');
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function setVisibility(array $visibility) {
+    $this->set('visibility', $visibility);
+    return $this;
   }
 
   /**
