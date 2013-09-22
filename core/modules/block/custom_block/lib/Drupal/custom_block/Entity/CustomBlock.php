@@ -254,7 +254,7 @@ class CustomBlock extends EntityNG implements CustomBlockInterface {
    * {@inheritdoc}
    */
   public function getCustomBlockType() {
-    return $this->type;
+    return $this->entityType();
   }
 
   /**
